@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application.gradle)
     alias(libs.plugins.kotlin.gradle)
+    id("kotlin-kapt")
 }
 
 android {
@@ -24,16 +25,21 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
         jvmTarget = libs.versions.jvmTarget.get()
     }
+    buildFeatures {
+        dataBinding true
+    }
 }
 
 dependencies {
-    implementation(libs.bundles.android.library)
-    testImplementation(libs.bundles.test)
-    androidTestImplementation(libs.bundles.android.test)
+    implementation project(path: ':feature:home')
+
+    implementation libs.bundles.android.library
+    testImplementation libs.bundles.test
+    androidTestImplementation libs.bundles.android.test
 }
