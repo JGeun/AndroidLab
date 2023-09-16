@@ -1,0 +1,37 @@
+plugins {
+    alias(libs.plugins.android.gradle)
+    alias(libs.plugins.kotlin.gradle)
+}
+
+android {
+    namespace 'com.jgeun.core.common_ui'
+    compileSdk libs.versions.compileSdk.get().toInteger()
+
+    defaultConfig {
+        minSdk libs.versions.minSdk.get().toInteger()
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = libs.versions.jvmTarget.get().toInteger()
+    }
+}
+
+dependencies {
+
+    implementation(libs.bundles.android.library)
+    testImplementation(libs.bundles.test)
+    androidTestImplementation(libs.bundles.android.test)
+}

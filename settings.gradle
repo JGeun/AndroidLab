@@ -17,3 +17,4 @@ rootProject.name = "AndroidLab"
 include ':app'
 include ':feature:serialization:gson'
 include ':feature:home'
+include ':core:common-ui'
