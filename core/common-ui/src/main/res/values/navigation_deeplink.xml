@@ -5,4 +5,8 @@
 
     <!-- Serialization  -->
     <string name="serialization_gson_deeplink_url">lab://serialization/gson</string>
+
+    <!-- Component  -->
+    <string name="component_navigation_deeplink_first_screen_url">lab://component/navigation/deeplink/first</string>
+    <string name="component_navigation_deeplink_second_screen_url">lab://component/navigation/deeplink/second</string>
 </resources>
