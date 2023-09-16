@@ -1,0 +1,48 @@
+[versions]
+# Gradle Versions
+kotlin-gradle-plugin = "1.8.0"
+android-gradle-plugin = "8.1.0"
+
+# Config Versions
+compileSdk = "33"
+minSdk = "26"
+targetSdk = "33"
+versionCode = "1"
+versionName = "1.0"
+jvmTarget = "1.8"
+
+# Library Versions
+androidx-core = "1.9.0"
+androidx-appcompat = "1.6.1"
+android-material = "1.9.0"
+androidx-constraintlayout = "2.1.4"
+
+junit = "4.13.2"
+androidx-junit = "1.1.5"
+androidx-expresso = "3.5.1"
+
+[plugins]
+# build.gradle (project module)
+android-application-gradle = { id = "com.android.application", version.ref = "android-gradle-plugin" }
+kotlin-gradle = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin-gradle-plugin" }
+android-gradle = { id = "com.android.library", version.ref = "android-gradle-plugin" }
+
+[libraries]
+# Android Library
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
+android-material =  { module = "com.google.android.material:material", version.ref = "android-material" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "androidx-constraintlayout" }
+
+# Test Library
+junit = { module = "junit:junit", version.ref = "junit" }
+
+# Android Test Library
+androidx-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-junit" }
+androidx-espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "androidx-expresso" }
+
+[bundles]
+# Android
+android-library = ["androidx-core-ktx", "androidx-appcompat", "android-material", "androidx-constraintlayout"]
+test = ["junit"]
+android-test = ["androidx-junit", "androidx-espresso"]
