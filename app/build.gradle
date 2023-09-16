@@ -37,7 +37,10 @@ android {
 }
 
 dependencies {
+
+    implementation project(path: ':core:common-ui')
     implementation project(path: ':feature:home')
+    implementation project(path: ':feature:serialization:gson')
 
     implementation libs.bundles.android.library
     testImplementation libs.bundles.test
