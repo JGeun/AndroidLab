@@ -9,13 +9,14 @@ minSdk = "26"
 targetSdk = "33"
 versionCode = "1"
 versionName = "1.0"
-jvmTarget = "1.8"
+jvmTarget = "17"
 
 # Library Versions
 androidx-core = "1.9.0"
 androidx-appcompat = "1.6.1"
 android-material = "1.9.0"
 androidx-constraintlayout = "2.1.4"
+androidx-navigation = "2.5.3"
 
 junit = "4.13.2"
 androidx-junit = "1.1.5"
@@ -33,6 +34,9 @@ androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
 android-material =  { module = "com.google.android.material:material", version.ref = "android-material" }
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "androidx-constraintlayout" }
+androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidx-navigation" }
+androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidx-navigation" }
+
 
 # Test Library
 junit = { module = "junit:junit", version.ref = "junit" }
@@ -40,9 +44,11 @@ junit = { module = "junit:junit", version.ref = "junit" }
 # Android Test Library
 androidx-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-junit" }
 androidx-espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "androidx-expresso" }
+navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version = "2.7.2" }
+navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version = "2.7.2" }
 
 [bundles]
 # Android
-android-library = ["androidx-core-ktx", "androidx-appcompat", "android-material", "androidx-constraintlayout"]
+android-library = ["androidx-core-ktx", "androidx-appcompat", "android-material", "androidx-constraintlayout", "androidx-navigation-fragment-ktx", "androidx-navigation-ui-ktx"]
 test = ["junit"]
 android-test = ["androidx-junit", "androidx-espresso"]
