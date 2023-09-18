@@ -41,6 +41,7 @@ dependencies {
     implementation project(path: ':core:common-ui')
     implementation project(path: ':feature:home')
     implementation project(path: ':feature:serialization:gson')
+    implementation project(path: ':feature:component:navigation-deeplink')
 
     implementation libs.bundles.android.library
     testImplementation libs.bundles.test

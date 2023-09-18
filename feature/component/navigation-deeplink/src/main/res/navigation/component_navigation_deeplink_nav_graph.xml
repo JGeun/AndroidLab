@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/component_navigation_deeplink_nav_graph"
+    app:startDestination="@id/firstNavigationFragment">
+
+    <fragment
+        android:id="@+id/firstNavigationFragment"
+        android:name="com.jgeun.feature.component.navigation_deeplink.FirstNavigationFragment"
+        android:label="fragment_first_navigation"
+        tools:layout="@layout/fragment_first_navigation" >
+        <action
+            android:id="@+id/action_firstNavigationFragment_to_secondNavigationFragment"
+            app:destination="@id/secondNavigationFragment" />
+
+        <deepLink
+            app:uri="@string/component_navigation_deeplink_first_screen_url" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondNavigationFragment"
+        android:name="com.jgeun.feature.component.navigation_deeplink.SecondNavigationFragment"
+        android:label="fragment_second_navigation"
+        tools:layout="@layout/fragment_second_navigation" >
+
+<!--        <action app:popUpTo="@id/firstNavigationFragment" />-->
+
+        <deepLink
+            app:uri="@string/component_navigation_deeplink_second_screen_url" />
+
+    </fragment>
+
+</navigation>
