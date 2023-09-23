@@ -37,6 +37,7 @@ dependencies {
     implementation project(path: ':core:common-ui')
 
     implementation libs.bundles.android.library
+    implementation libs.bundles.compose.library
     implementation libs.bundles.test
     implementation libs.bundles.android.test
 }
