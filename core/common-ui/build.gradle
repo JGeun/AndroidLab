@@ -32,6 +32,7 @@ android {
 dependencies {
 
     implementation(libs.bundles.android.library)
+    implementation(libs.bundles.compose.library)
     testImplementation(libs.bundles.test)
     androidTestImplementation(libs.bundles.android.test)
 }

@@ -27,13 +27,19 @@ android {
     kotlinOptions {
         jvmTarget = libs.versions.jvmTarget.get()
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.0"
+    }
     buildFeatures {
         dataBinding true
+    }
+    buildFeatures {
+        compose = true
     }
 }
 
 dependencies {
-
+    implementation project(path: ':core:domain')
     implementation project(path: ':core:common-ui')
 
     implementation libs.bundles.android.library
