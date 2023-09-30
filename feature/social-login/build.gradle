@@ -1,7 +1,6 @@
 plugins {
-    alias(libs.plugins.android.application.gradle)
+    alias(libs.plugins.android.gradle)
     alias(libs.plugins.kotlin.gradle)
-    id("kotlin-kapt")
 }
 
 // Properties 객체 생성
@@ -9,19 +8,15 @@ Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
 android {
-    namespace 'com.jgeun.androidlab'
+    namespace 'com.jgeun.feature.social.login'
     compileSdk libs.versions.compileSdk.get().toInteger()
 
     defaultConfig {
-        applicationId "com.jgeun.androidlab"
         minSdk libs.versions.minSdk.get().toInteger()
-        targetSdk libs.versions.targetSdk.get().toInteger()
-        versionCode libs.versions.versionCode.get().toInteger()
-        versionName libs.versions.versionName.get()
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
 
-        manifestPlaceholders = [kakao_native_app_key: properties["KAKAO_NATIVE_APP_KEY"]]
         buildConfigField "String", "KAKAO_NATIVE_APP_KEY", properties['KAKAO_NATIVE_APP_KEY']
     }
 
@@ -38,6 +33,9 @@ android {
     kotlinOptions {
         jvmTarget = libs.versions.jvmTarget.get()
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.0"
+    }
     buildFeatures {
         buildConfig true
         dataBinding true
@@ -47,12 +45,9 @@ android {
 dependencies {
 
     implementation project(path: ':core:common-ui')
-    implementation project(path: ':feature:home')
-    implementation project(path: ':feature:social-login')
-    implementation project(path: ':feature:serialization:gson')
-    implementation project(path: ':feature:component:navigation-deeplink')
 
     implementation(libs.bundles.android.library)
+    implementation(libs.bundles.compose.library)
     implementation(libs.bundles.social.login.library)
     testImplementation(libs.bundles.test)
     androidTestImplementation(libs.bundles.android.test)
