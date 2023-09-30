@@ -34,6 +34,9 @@ compose-ui-test-junit4 = "1.5.1"
 compose-ui-tooling = "1.3.3"
 org-jetbrains-kotlin-jvm = "1.8.0"
 
+# Social Login
+kakao_login = "2.17.0"
+
 [plugins]
 # build.gradle (project module)
 android-application-gradle = { id = "com.android.application", version.ref = "android-gradle-plugin" }
@@ -60,6 +63,9 @@ compose-material3 = { module = "androidx.compose.material3:material3", version.r
 compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "androidx-navigation"}
 lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle-runtime-compose" }
 
+# Social Login Library
+kakao-login = { module = "com.kakao.sdk:v2-user", version.ref = "kakao_login" }
+
 # Test Library
 junit = { module = "junit:junit", version.ref = "junit" }
 
@@ -76,6 +82,7 @@ compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", ve
 # Android
 android-library = ["androidx-core-ktx", "androidx-appcompat", "android-material", "androidx-constraintlayout", "androidx-navigation-fragment-ktx", "androidx-navigation-ui-ktx"]
 compose-library = ["activity-compose", "compose-ui", "compose-ui-graphics", "compose-ui-tooling-preview", "compose-material3", "compose-navigation", "compose-material", "lifecycle-runtime-compose"]
+social-login-library = ["kakao-login"]
 
 test = ["junit"]
 android-test = ["androidx-junit", "androidx-espresso"]
