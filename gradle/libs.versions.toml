@@ -37,6 +37,13 @@ org-jetbrains-kotlin-jvm = "1.8.0"
 # Social Login
 kakao_login = "2.17.0"
 
+# Network
+retrofit = "2.9.0"
+okhttp3 = "4.11.0"
+
+# Asychronous
+coroutines = "1.7.3"
+
 [plugins]
 # build.gradle (project module)
 android-application-gradle = { id = "com.android.application", version.ref = "android-gradle-plugin" }
@@ -66,6 +73,17 @@ lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-com
 # Social Login Library
 kakao-login = { module = "com.kakao.sdk:v2-user", version.ref = "kakao_login" }
 
+# Network Library
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+okhttp3 = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp3" }
+
+retrofit-gson-converter = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+okhttp3-mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "okhttp3" }
+
+# Asychronyous Library
+coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+
 # Test Library
 junit = { module = "junit:junit", version.ref = "junit" }
 
@@ -83,6 +101,10 @@ compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", ve
 android-library = ["androidx-core-ktx", "androidx-appcompat", "android-material", "androidx-constraintlayout", "androidx-navigation-fragment-ktx", "androidx-navigation-ui-ktx"]
 compose-library = ["activity-compose", "compose-ui", "compose-ui-graphics", "compose-ui-tooling-preview", "compose-material3", "compose-navigation", "compose-material", "lifecycle-runtime-compose"]
 social-login-library = ["kakao-login"]
+network-library = ["retrofit", "retrofit-gson-converter", "okhttp3"]
+asychronyous-library = ["coroutines"]
 
 test = ["junit"]
 android-test = ["androidx-junit", "androidx-espresso"]
+network-test-library = ["okhttp3-mockwebserver"]
+asychronyous-test-library = ["coroutines-test"]
