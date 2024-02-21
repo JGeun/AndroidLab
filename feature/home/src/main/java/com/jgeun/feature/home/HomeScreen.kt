@@ -42,8 +42,6 @@ fun HomeScreen() {
 	val androidKeywordList by viewModel.androidKeywordFlow.collectAsStateWithLifecycle()
 	var searchText by remember { mutableStateOf("") }
 
-	Log.e("TEst@@@", "$androidKeywordList")
-
 	LaunchedEffect(searchText) {
 		viewModel.getAndroidKeyword()
 	}

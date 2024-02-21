@@ -24,7 +24,7 @@ class HomeFragment : Fragment() {
 			setContent {
 				// In Compose world
 				MaterialTheme {
-					HomeScreen()
+					PhotoGestureScreen()
 				}
 			}
 		}
